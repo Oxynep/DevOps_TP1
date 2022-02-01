@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  # API
+  back_hw:
+    build: # chemin d'accès Dockerfile
+      ./back
+    networks: # réseau du containeur
+      - net
+    depends_on: # doit être lancer après la DB
+      - db_serv
+
+  # BD
+  db_serv:
+    build:
+      ./database
+    networks:
+      - net
+
+  # Front
+  front:
+    build:
+      ./front
+    ports: # redirection des port (host -> containeur)
+      - 80:80
+    networks:
+      - net
+    depends_on:
+      - back_hw
+networks: # déclaration du réseau
+  net:
