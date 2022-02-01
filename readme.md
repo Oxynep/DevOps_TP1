@@ -2,6 +2,7 @@ https://drive.google.com/drive/folders/13-1rq6Fkwb27RnhEK9vztQWLXxxY4l5t
 
 ## first step
 newgrp docker
+ssh -T git@github.com
 
 # DATABASE
 #### Build
@@ -84,3 +85,12 @@ docker-compose down
 ## Multistage build
 ne pas garder des outils non nécessaire au run
 d'abords on compile avec un JDK puis on run le code avec un JRE
+
+# Publish
+docker tag oxynep/cours/tp1_db oxynep/cours/tp1_db:1.0
+docker tag oxynep/cours/tp1_back oxynep/cours/tp1_back:1.0
+docker tag oxynep/cours/tp1_front oxynep/cours/tp1_front:1.0
+
+docker push oxynep/cours/tp1_db:1.0
+docker push oxynep/cours/tp1_back:1.0
+docker push oxynep/cours/tp1_front:1.0
