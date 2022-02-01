@@ -113,7 +113,7 @@ docker-compose up --build
 docker-compose restart [nom]
 ```
 
-## Stop$
+## Stop
 ```
 docker-compose down
 ```
