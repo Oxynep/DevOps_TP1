@@ -1,7 +1,7 @@
 ---
 - name: Run Backend
   docker_container:
-    name: backend
+    name: back_hw
     image: oxynep/tp-devops-cpe:back
     state: started
     exposed_ports:

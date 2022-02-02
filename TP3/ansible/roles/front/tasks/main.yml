@@ -1,7 +1,7 @@
 ---
 - name: Run HTTPD
   docker_container:
-    name: httpd
+    name: front
     image: oxynep/tp-devops-cpe:front
     ports: 80:80
     state: started

@@ -61,3 +61,8 @@ ansible-galaxy init ansible/roles/api --force
 ansible-galaxy init ansible/roles/front --force
 ```
 
+## Run deployement
+```
+ansible-playbook -i ansible/inventories/setup.yml ansible/launch.yml --syntax-check
+
+```

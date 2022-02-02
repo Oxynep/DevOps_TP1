@@ -1,7 +1,7 @@
 ---
 - name: Run Database
   docker_container:
-    name: db
+    name: db_serv
     image: oxynep/tp-devops-cpe:database
     state: started
     env:
