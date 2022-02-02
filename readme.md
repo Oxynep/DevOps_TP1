@@ -1,5 +1,7 @@
 https://drive.google.com/drive/folders/13-1rq6Fkwb27RnhEK9vztQWLXxxY4l5t
 
+dans tout le dépot "front" fait référence au proxy; le front est nommé "front_main"
+
 ## first step
 newgrp docker<br>
 ssh -T git@github.com

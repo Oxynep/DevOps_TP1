@@ -20,7 +20,7 @@ services:
     volumes:
       - /tmp/data:/var/lib/postgresql/data
 
-  # Front
+  # proxy
   front:
     build:
       ./front
@@ -30,5 +30,15 @@ services:
       - net
     depends_on:
       - back_hw
+
+  # front
+  front_main:
+    build:
+      ./devops-front-main
+    networks:
+      - net
+    depends_on:
+      - back_hw
+      
 networks: # déclaration du réseau
   net:

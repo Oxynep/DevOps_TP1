@@ -30,7 +30,7 @@ ansible all -m service -a "name=httpd state=started" --private-key=~/Bureau/Cour
 ansible all -i ansible/inventories/setup.yml  -m ping
 ```
 
-## Get Os distrub
+## Get OS distrub
 ```
 ansible all -i ansible/inventories/setup.yml  -m setup -a "filter=ansible_distribution*"
 ```
@@ -64,5 +64,29 @@ ansible-galaxy init ansible/roles/front --force
 ## Run deployement
 ```
 ansible-playbook -i ansible/inventories/setup.yml ansible/launch.yml --syntax-check
-
+ansible-playbook -i ansible/inventories/setup.yml ansible/launch.yml
 ```
+
+## exemple main.yml
+``` yml
+---
+- name: Run Database
+  docker_container:
+    name: db_serv # nom du conteneur
+    image: oxynep/tp-devops-cpe:database # image sur docker hub
+    state: started
+    env: # varible d'environnement
+      POSTGRES_DB: db
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+    networks:
+      - name: backend
+```
+
+
+# Front_main
+## Création rôle
+```
+ansible-galaxy init ansible/roles/front --force
+```
+

@@ -1,0 +1,8 @@
+---
+- name: Run Front_main
+  docker_container:
+    name: front_main
+    image: oxynep/tp-devops-cpe:front_main
+    state: started
+    networks:
+      - name: frontend
