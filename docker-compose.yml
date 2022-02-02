@@ -15,6 +15,10 @@ services:
       ./database
     networks:
       - net
+    environment:
+      - POSTGRES_PASSWORD=pwd
+    volumes:
+      - /tmp/data:/var/lib/postgresql/data
 
   # Front
   front:

@@ -24,3 +24,5 @@ jobs:
         # run maven
         run: mvn clean verify --file ./back/simple-api-main
 ```
+
+commentaire dans le .main.yml
