@@ -1,0 +1,11 @@
+---
+- name: Run Backend
+  docker_container:
+    name: backend
+    image: oxynep/tp-devops-cpe:back
+    state: started
+    exposed_ports:
+      - 8080
+    networks:
+      - name: backend
+      - name: frontend
