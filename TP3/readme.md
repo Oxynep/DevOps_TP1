@@ -1,7 +1,7 @@
 # TD
 ## Connect to serv
 ```
-ssh -i ~/Bureau/Cours/pasRSA/id_rsa centos@bastien.moronval.takima.cloud 
+ssh -i ~/Bureau/Cours/pasRSA/id_rsa centos@bastien.moronval.takima.cloud
 ```
 
 ## Ping avec les host dans un inventory
