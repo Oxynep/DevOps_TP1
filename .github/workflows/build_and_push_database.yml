@@ -2,9 +2,8 @@ name: Build And Push Database
 on:
   branches:
     - main
-  push:
-    paths:
-      - 'database/**'
+  paths:
+    - 'database/**'
 jobs:
   build-and-push-docker-image-database:
     # run only when code is compiling and tests are passing

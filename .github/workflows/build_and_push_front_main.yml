@@ -2,9 +2,8 @@ name: Build And Push Front Main
 on:
   branches:
     - main
-  push:
-    paths:
-      - 'devops-front-main/**'
+  paths:
+    - 'devops-front-main/**'
 jobs:
   build-and-push-docker-image-front-main:
     # run only when code is compiling and tests are passing
