@@ -7,7 +7,7 @@ on:
       paths:
         - 'back/**'
       branches:
-      - main
+        - master
 jobs:
   build-and-push-docker-image-backend:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}

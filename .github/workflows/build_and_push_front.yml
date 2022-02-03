@@ -2,7 +2,7 @@ name: Build And Push Front
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'front/**'
 jobs:
