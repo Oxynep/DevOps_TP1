@@ -5,7 +5,7 @@ on:
     branches: master
     paths:
       - 'back/**'
-
+  pull_request:
 # nécessaire pour git
 env:
   GITHUB_TOKEN: $(secrets.GITHUB_TOKEN)
