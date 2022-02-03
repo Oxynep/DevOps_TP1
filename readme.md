@@ -2,6 +2,7 @@ https://drive.google.com/drive/folders/13-1rq6Fkwb27RnhEK9vztQWLXxxY4l5t
 
 # IMPORTANT
 *dans tout le dépot "front" fait référence au proxy; le front est nommé "front_main"*
+*les workflows sont cassés*
 
 ## first step
 newgrp docker<br>
