@@ -7,13 +7,13 @@ on:
       - main
 jobs:
   build-and-push-docker-image-backend:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
     on:
       push:
         paths:
           - 'back/**'
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    # run only when code is compiling and tests are passing
-    runs-on: ubuntu-latest
     # steps to perform in job
     steps:        
       - name: Checkout code
