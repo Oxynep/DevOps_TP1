@@ -1,0 +1,101 @@
+name: Build And Push
+on:
+  workflow_run:
+    workflows: ["Test Backend"]
+    types: [completed]
+    branches:
+      - main
+jobs:
+  build-and-push-docker-image-backend:
+    on:
+      push:
+        paths:
+          - 'back/**'
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
+    # steps to perform in job
+    steps:        
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Login to DockerHub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USR }} -p ${{secrets.DOCKER_HUB_PWD }}
+        
+      - name: Build image and push backend
+        uses: docker/build-push-action@v2
+        with:
+        # relative path to the place where source code with Dockerfile is located
+          context: ./back
+          # Note: tags has to be all lower-case
+          tags: ${{secrets.DOCKER_HUB_USR}}/tp-devops-cpe:back
+          push: ${{ github.ref == 'refs/heads/master'}}
+        
+  build-and-push-docker-image-database:
+    on:
+      push:
+        paths:
+          - 'database/**'
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
+    # steps to perform in job
+    steps:        
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Login to DockerHub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USR }} -p ${{secrets.DOCKER_HUB_PWD }}
+      - name: Build image and push database
+        uses: docker/build-push-action@v2
+        with:
+        # relative path to the place where source code with Dockerfile is located
+          context: ./database
+          # Note: tags has to be all lower-case
+          tags: ${{secrets.DOCKER_HUB_USR}}/tp-devops-cpe:database
+          push: ${{ github.ref == 'refs/heads/master'}}
+
+  build-and-push-docker-image-httpd:
+    on:
+      push:
+        paths:
+          - 'front/**'
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
+    # steps to perform in job
+    steps:        
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Login to DockerHub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USR }} -p ${{secrets.DOCKER_HUB_PWD }}
+      - name: Build image and push httpd
+        uses: docker/build-push-action@v2
+        with:
+        # relative path to the place where source code with Dockerfile is located
+          context: ./front
+          # Note: tags has to be all lower-case
+          tags: ${{secrets.DOCKER_HUB_USR}}/tp-devops-cpe:front
+          push: ${{ github.ref == 'refs/heads/master'}}
+
+  build-and-push-docker-image-front-main:
+    on:
+      push:
+        paths:
+          - 'devops-front-main/**'
+    # run only when code is compiling and tests are passing
+    runs-on: ubuntu-latest
+    # steps to perform in job
+    steps:        
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Login to DockerHub
+        run: docker login -u ${{ secrets.DOCKER_HUB_USR }} -p ${{secrets.DOCKER_HUB_PWD }}
+      - name: Build image and push front
+        uses: docker/build-push-action@v2
+        with:
+        # relative path to the place where source code with Dockerfile is located
+          context: ./devops-front-main
+          # Note: tags has to be all lower-case
+          tags: ${{secrets.DOCKER_HUB_USR}}/tp-devops-cpe:front_main
+          push: ${{ github.ref == 'refs/heads/master'}}
