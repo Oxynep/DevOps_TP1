@@ -25,4 +25,4 @@ jobs:
         run: mvn clean verify --file ./back/simple-api-main
 ```
 # Note
-Des commentaire se trouve dans le .main.yml (et les autres yml)
+Des commentaires se trouvent dans le .main.yml (et les autres yml)
