@@ -1,7 +1,8 @@
 https://drive.google.com/drive/folders/13-1rq6Fkwb27RnhEK9vztQWLXxxY4l5t
 
 # IMPORTANT
-*dans tout le dépot "front" fait référence au proxy; le front est nommé "front_main"*
+*dans tout le dépot "front" fait référence au proxy; le front est nommé "front_main"* <br>
+*dans chaque sous partie du projet se trouve un fichier de txt de test afin d'avoir quelque chose à pusher dans dans chaque dosier sans modifier le code"
 
 ## first step
 newgrp docker<br>
