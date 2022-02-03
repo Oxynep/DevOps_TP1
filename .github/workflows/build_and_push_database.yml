@@ -1,11 +1,10 @@
 name: Build And Push Database
 on:
-  workflow_run:
-    branches:
-      - main
-    push:
-      paths:
-        - 'database/**'
+  branches:
+    - main
+  push:
+    paths:
+      - 'database/**'
 jobs:
   build-and-push-docker-image-database:
     # run only when code is compiling and tests are passing

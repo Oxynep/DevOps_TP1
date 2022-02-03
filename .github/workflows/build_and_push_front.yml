@@ -1,11 +1,10 @@
 name: Build And Push Front
 on:
-  workflow_run:
-    branches:
-      - main
-    push:
-      paths:
-        - 'front/**'
+  branches:
+    - main
+  push:
+    paths:
+      - 'front/**'
 jobs:
   build-and-push-docker-image-httpd:
     # run only when code is compiling and tests are passing
