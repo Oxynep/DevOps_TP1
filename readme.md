@@ -2,7 +2,7 @@ https://drive.google.com/drive/folders/13-1rq6Fkwb27RnhEK9vztQWLXxxY4l5t
 
 # IMPORTANT
 *Dans tout le dépot "front" fait référence au proxy; le front est nommé "front_main"* <br><br>
-*les workflow de déploiement sur dockhub sont séparés pour chaque sous parties et le déploiement du back dépend des tests*<br>
+*Les workflow de déploiement sur dockhub sont séparés pour chaque sous parties et le déploiement du back dépend des tests*<br>
 *Dans chaque sous partie du projet se trouve un fichier txt de test (avec des noms diféérents) afin d'avoir quelque chose à pusher dans dans chaque dosier sans modifier le code*<br><br>
 *La plupart des commandes sont à taper dans le dossier avec le numéros de TP (ou TD) correspondant : dans $/TP1/ pour les question du premier TP et dans $/TP1/TP2/ pour le second (oui il y a eu des erreurs d'organisation ^^)*<br>
 *Les readme de chaque TP se trouve dans les dossiers correspondants*
