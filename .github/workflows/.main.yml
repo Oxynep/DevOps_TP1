@@ -10,11 +10,11 @@ env:
 jobs:
 
   test-backend:
+    runs-on: ubuntu-18.04
     on:
       push:
         paths:
           - 'back/**'
-    runs-on: ubuntu-18.04
     steps:
       #checkout your github code using actions/checkout@v2.3.3
       - uses: actions/checkout@v2.3.3
