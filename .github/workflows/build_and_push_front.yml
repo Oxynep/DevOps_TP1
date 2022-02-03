@@ -1,9 +1,10 @@
 name: Build And Push Front
 on:
-  branches:
-    - main
-  paths:
-    - 'front/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'front/**'
 jobs:
   build-and-push-docker-image-httpd:
     # run only when code is compiling and tests are passing

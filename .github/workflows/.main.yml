@@ -3,10 +3,9 @@ on:
   #to begin you want to launch this job in main and develop
   push:
     branches: master
-  push:
     paths:
       - 'back/**'
-  pull_request:
+
 # nécessaire pour git
 env:
   GITHUB_TOKEN: $(secrets.GITHUB_TOKEN)

@@ -3,11 +3,11 @@ on:
   workflow_run:
     workflows: ["Test Backend"]
     types: [completed]
-    branches:
-      - main
     push:
       paths:
         - 'back/**'
+      branches:
+      - main
 jobs:
   build-and-push-docker-image-backend:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
